@@ -1,32 +1,41 @@
-# Prerequisites
-*.d
+// Corey Vick Jr.
+// 10/19/20 
+/*calculate vales of how much gas will cost after selecting gas type*/ 
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+int main()
+{
+  //input prompt and read in type of gas,regular, supreme or plus
+  char gasType;
+  double totalGallons, price;
+  cout << "Please identity the type of gas you would like   to fill: ";
+  cin >> gasType;
+  gasType = toupper(gasType);
+  cout << "Enter the amount of gas your car holds: ";
+  cin >> totalGallons;
 
-# Precompiled Headers
-*.gch
-*.pch
+  //Choose gas to see price for each specific type by name
+  switch(gasType){
+  case 'R':
+  price = totalGallons*2.09;
+  cout << fixed << setprecision(2);
+  cout << "In order to fill with " << totalGallons << " Gallons, " << "the grade of gas " << gasType << " will cost $" << price; 
+  break;
+  switch(gasType)
+  case 'P':
+  price = totalGallons*2.29;
+  cout << fixed << setprecision(2);
+  cout << "In order to fill with " << totalGallons << " Gallons, " << "the grade of gas " << gasType << " will cost $" << price; break;
+  switch(gasType)
+  case 'S':
+  price = totalGallons*2.69;
+  cout << fixed << setprecision(2);
+  cout << "In order to fill with " << totalGallons << " Gallons, " << "the grade of gas " << gasType << " will cost $" << price; break;
+  default: cout << "Invalid gas type. ";
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+}
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+return 0;
+}
